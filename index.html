@@ -1194,7 +1194,7 @@
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             
             if (!emailRegex.test(emailField.value)) {
-                alert("Bhai, sahi email toh daalo!");
+                alert("Please enter a valid email!");
                 return;
             }
 
@@ -1213,7 +1213,7 @@
                     cBtn.disabled = false;
                     cBtn.innerHTML = 'Error! Try Again';
                     console.error('Submission Error:', error);
-                    alert("Network issue hai bhai, ek baar fir try karo.");
+                    alert("Network issue");
                 });
         });
     }
@@ -1265,6 +1265,7 @@
 </body>
 
 </html>
+
 
 
 
