@@ -980,24 +980,21 @@
 <form id="contactForm" class="grid grid-cols-1 md:grid-cols-2 gap-5 relative z-10">
     <div class="space-y-1">
         <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Full Name</label>
-        <input type="text" name="Full_Name" required minlength="3" placeholder="John Doe"
-            class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-brand-light focus:bg-white/[0.08] transition-all placeholder:text-slate-700 invalid:border-red-500/50">
+        <input type="text" name="Full_Name" required placeholder="John Doe"
+            class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-brand-light focus:bg-white/[0.08] transition-all placeholder:text-slate-700">
     </div>
     <div class="space-y-1">
         <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Email Address</label>
-        <input type="email" name="Email" required 
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-            placeholder="john@company.com"
-            class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-brand-light focus:bg-white/[0.08] transition-all placeholder:text-slate-700 invalid:border-red-500/50 peer">
-        <p class="mt-1 invisible peer-invalid:visible text-[10px] text-red-400 ml-1">Please enter a valid email address.</p>
+        <input type="email" name="Email" required placeholder="john@company.com"
+            class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-brand-light focus:bg-white/[0.08] transition-all placeholder:text-slate-700">
     </div>
     <div class="md:col-span-2 space-y-1">
         <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Your Message</label>
-        <textarea name="Message" rows="4" required minlength="10" placeholder="Tell us about your requirements..."
-            class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-brand-light focus:bg-white/[0.08] transition-all resize-none placeholder:text-slate-700 invalid:border-red-500/50"></textarea>
+        <textarea name="Message" rows="4" required placeholder="Tell us about your requirements..."
+            class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-brand-light focus:bg-white/[0.08] transition-all resize-none placeholder:text-slate-700"></textarea>
     </div>
     <button type="submit" id="contactSubmitBtn"
-        class="md:col-span-2 w-full bg-white text-brand font-black py-5 rounded-2xl text-sm uppercase tracking-widest hover:bg-indigo-50 hover:scale-[1.01] active:scale-95 transition-all shadow-[0_20px_40px_rgba(255,255,255,0.1)] group disabled:opacity-50 disabled:cursor-not-allowed">
+        class="md:col-span-2 w-full bg-white text-brand font-black py-5 rounded-2xl text-sm uppercase tracking-widest hover:bg-indigo-50 hover:scale-[1.01] active:scale-95 transition-all shadow-[0_20px_40px_rgba(255,255,255,0.1)] group">
         <span class="flex items-center justify-center gap-3">
             Dispatch Message
             <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none"
@@ -1179,44 +1176,31 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-   <script>
-    const contactURL = 'https://script.google.com/macros/s/AKfycbyyYKvcnOiDhRAuoAotY4yDaV32COBxezAmaMSDGiMopwU7DhzeWSr-tFvY51WYLM--0A/exec'; 
-    const cForm = document.getElementById('contactForm');
-    const cBtn = document.getElementById('contactSubmitBtn');
-    const cMsg = document.getElementById('contactMsg');
+    <script>
+    const contactURL = 'https://script.google.com/macros/s/AKfycbyyYKvcnOiDhRAuoAotY4yDaV32COBxezAmaMSDGiMopwU7DhzeWSr-tFvY51WYLM--0A/exec' 
+    const cForm = document.getElementById('contactForm')
+    const cBtn = document.getElementById('contactSubmitBtn')
+    const cMsg = document.getElementById('contactMsg')
 
-    if(cForm) {
-        cForm.addEventListener('submit', e => {
-            e.preventDefault();
-            
-            // Extra JS Validation
-            const emailField = cForm.querySelector('input[name="Email"]');
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
-            if (!emailRegex.test(emailField.value)) {
-                alert("Please enter a valid email!");
-                return;
-            }
-
-            cBtn.disabled = true;
-            cBtn.innerHTML = 'Validating & Sending...';
-            
-            fetch(contactURL, { method: 'POST', body: new FormData(cForm)})
-                .then(response => {
-                    cMsg.classList.remove('hidden');
-                    cForm.reset();
-                    cBtn.disabled = false;
-                    cBtn.innerHTML = 'Dispatch Message';
-                    setTimeout(() => cMsg.classList.add('hidden'), 6000);
-                })
-                .catch(error => {
-                    cBtn.disabled = false;
-                    cBtn.innerHTML = 'Error! Try Again';
-                    console.error('Submission Error:', error);
-                    alert("Network issue");
-                });
-        });
-    }
+    cForm.addEventListener('submit', e => {
+        e.preventDefault()
+        cBtn.disabled = true
+        cBtn.innerHTML = 'Dispatching...'
+        
+        fetch(contactURL, { method: 'POST', body: new FormData(cForm)})
+            .then(response => {
+                cMsg.classList.remove('hidden')
+                cForm.reset()
+                cBtn.disabled = false
+                cBtn.innerHTML = 'Dispatch Message'
+                setTimeout(() => cMsg.classList.add('hidden'), 5000)
+            })
+            .catch(error => {
+                cBtn.disabled = false
+                cBtn.innerHTML = 'Error! Try Again'
+                console.error('Error!', error.message)
+            })
+    })
 </script>
     <script>
         // AOS Animation Init
@@ -1265,7 +1249,6 @@
 </body>
 
 </html>
-
 
 
 
