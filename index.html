@@ -1,196 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labor Mandi | Next-Gen Workforce Management</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lf04oMsAAAAAPBL4zNig6q8govf9nEmj9ltBIVh"></script>
-
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lf04oMsAAAAAOR99MIyUTHZemXtXEVlU6CKhEQN"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            DEFAULT: '#000066',
-                            light: '#3333ff',
-                            dark: '#000033',
-                            surface: '#020617'
-                        }
-                    },
-                    fontFamily: {
-                        display: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        body: ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        // Original Animations
-                        'blob': 'blob 10s infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-glow': 'pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        // New Premium Animations
-                        'text-shimmer': 'text-shimmer 3s linear infinite',
-                        'spin-slow': 'spin 15s linear infinite',
-                        'spin-reverse-slow': 'spin 20s linear infinite reverse',
-                        'pulse-ring': 'pulse-ring 4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-15px)' },
-                        },
-                        'pulse-glow': {
-                            '0%, 100%': { opacity: '0.4' },
-                            '50%': { opacity: '0.8' },
-                        },
-                        // New Keyframes
-                        'text-shimmer': {
-                            'to': { 'background-position': '200% center' }
-                        },
-                        'pulse-ring': {
-                            '0%': { transform: 'scale(0.8)', opacity: '0.5' },
-                            '100%': { transform: 'scale(1.2)', opacity: '0' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #020617;
-            color: #f8fafc;
-            overflow-x: hidden;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: '"Plus Jakarta Sans"', sans-serif;
-        }
-
-        .noise-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 50;
-            opacity: 0.04;
-            background: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
-        }
-
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        }
-
-        .glass-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .glass-card:hover {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 102, 0.3);
-        }
-
-        .icon-container svg {
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .glass-card:hover .icon-container svg {
-            transform: scale(1.1) rotate(5deg);
-            stroke: #3333ff;
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #020617;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #000066;
-        }
-
-        .text-gradient {
-            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        details>summary {
-            list-style: none;
-        }
-
-        details>summary::-webkit-details-marker {
-            display: none;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
-
 <body class="relative bg-[#020617]">
-
     <div class="noise-bg"></div>
 
     <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div
-            class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-brand rounded-full mix-blend-screen filter blur-[100px] opacity-40 animate-blob">
-        </div>
-        <div class="absolute top-[20%] right-[-10%] w-96 h-96 bg-[#3333ff] rounded-full mix-blend-screen filter blur-[120px] opacity-30 animate-blob"
-            style="animation-delay: 2s;"></div>
-        <div class="absolute bottom-[-20%] left-[20%] w-[500px] h-[500px] bg-indigo-900 rounded-full mix-blend-screen filter blur-[150px] opacity-40 animate-blob"
-            style="animation-delay: 4s;"></div>
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-brand rounded-full mix-blend-screen filter blur-[100px] opacity-40 animate-blob"></div>
+        <div class="absolute top-[20%] right-[-10%] w-96 h-96 bg-[#3333ff] rounded-full mix-blend-screen filter blur-[120px] opacity-30 animate-blob" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-[-20%] left-[20%] w-[500px] h-[500px] bg-indigo-900 rounded-full mix-blend-screen filter blur-[150px] opacity-40 animate-blob" style="animation-delay: 4s;"></div>
     </div>
 
-    <nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-7xl z-50 glass-panel rounded-full px-4 py-2 md:px-6 md:py-3 flex items-center justify-between transition-all duration-300"
-        id="navbar">
+    <nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-7xl z-50 glass-panel rounded-full px-4 py-2 md:px-6 md:py-3 flex items-center justify-between transition-all duration-300" id="navbar">
         <a href="#home" class="flex items-center gap-3 group">
-            <div
-                class="w-8 h-8 md:w-10 md:h-10 bg-brand rounded-full flex items-center justify-center border border-white/10 group-hover:scale-105 transition-transform duration-300">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    class="text-white">
+            <div class="w-8 h-8 md:w-10 md:h-10 bg-brand rounded-full flex items-center justify-center border border-white/10 group-hover:scale-105 transition-transform duration-300">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-white">
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                 </svg>
             </div>
-            <span class="font-display font-bold text-lg md:text-xl tracking-tight text-white">Labor<span
-                    class="text-indigo-400">Mandi</span></span>
+            <span class="font-display font-bold text-lg md:text-xl tracking-tight text-white">Labor<span class="text-indigo-400">Mandi</span></span>
         </a>
         <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
             <a href="#services" class="hover:text-white transition-colors">Services</a>
@@ -200,128 +39,114 @@
             <a href="#contact" class="hover:text-white transition-colors">Contact</a>
         </div>
         <div class="flex items-center gap-4">
-            <button
-                class="bg-white text-brand font-bold px-4 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm hover:bg-slate-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+            <button class="bg-white text-brand font-bold px-4 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm hover:bg-slate-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]">
                 Get Started
             </button>
         </div>
     </nav>
 
+    <section id="home" class="relative pt-32 pb-16 px-8 lg:pt-40 lg:pb-24 min-h-[90vh] flex items-center z-10 overflow-hidden bg-[#020617] border-b border-white/5">
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,#000_10%,transparent_100%)] pointer-events-none z-0"></div>
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-light/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-<section id="home" class="relative pt-32 pb-16 px-8 lg:pt-40 lg:pb-24 min-h-[90vh] flex items-center z-10 overflow-hidden bg-[#020617] border-b border-white/5">
-    
-    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,#000_10%,transparent_100%)] pointer-events-none z-0"></div>
-    
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-light/10 rounded-full blur-[120px] pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
-        <div class="grid lg:grid-cols-12 gap-10 items-center">
-            
-            <div class="lg:col-span-6 relative z-20 pt-8 lg:pt-0" data-aos="fade-up" data-aos-duration="1000">
-                <h1 class="font-display text-5xl sm:text-6xl lg:text-[72px] font-black leading-[1.05] tracking-tight mb-8 text-white max-w-xl">
-                    Workforce <br>
-                    Management <br>
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-emerald-200 to-indigo-400 animate-text-shimmer bg-[length:200%_auto] drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">Revolutionized</span> 
-                    with
-                    <span class="inline-flex items-center justify-center w-12 h-12 lg:w-16 lg:h-16 bg-[#000033] rounded-2xl border border-brand-light/30 align-middle mx-1 lg:mx-2 shadow-[0_0_25px_rgba(51,51,255,0.25)]">
-                        <svg class="w-6 h-6 lg:w-8 lg:h-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                    </span>
-                    AI
-                </h1>
-                
-                <p class="text-base sm:text-lg text-slate-400 mb-10 max-w-md leading-relaxed font-light">
-                    Boost productivity, enhance worker experience, and streamline operations with our cutting-edge AI-powered technology.
-                </p>
-                
-                <div class="relative max-w-md flex items-center bg-white/[0.03] border border-white/10 rounded-full p-1.5 focus-within:border-emerald-500/50 focus-within:bg-white/[0.05] transition-all duration-300 shadow-[0_15px_35px_-10px_rgba(0,0,0,0.8)]">
-                    <div class="pl-4 text-slate-500">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect><polyline points="3 7 12 13 21 7"></polyline></svg>
-                    </div>
-                    <input type="email" placeholder="Enter your email" class="w-full bg-transparent text-white px-3 py-3 text-sm focus:outline-none placeholder-slate-600">
-                    <button class="bg-brand hover:bg-brand-light text-white font-bold text-xs sm:text-sm px-6 py-3.5 rounded-full transition-all shrink-0 shadow-[0_0_20px_rgba(51,51,255,0.4)] hover:shadow-[0_0_30px_rgba(52,211,153,0.3)]">
-                        Get Started
-                    </button>
-                </div>
-            </div>
-
-            <div class="lg:col-span-6 relative flex justify-center items-center mt-12 lg:mt-0" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
-                
-                <div class="relative w-[240px] sm:w-[280px]">
-                    <div class="relative w-full aspect-[1/2.15] bg-slate-900 rounded-[2.5rem] p-2 shadow-[0_30px_80px_-15px_rgba(0,102,102,0.5)] border border-slate-700 overflow-hidden z-30 ring-1 ring-slate-800 transition-transform duration-700 hover:-translate-y-2">
-                        <div class="absolute top-2.5 left-1/2 -translate-x-1/2 w-[30%] h-4 bg-slate-900 rounded-b-xl z-40 flex items-center justify-center shadow-inner">
-                            <div class="w-6 h-1 bg-slate-800 rounded-full"></div>
-                        </div>
-                        <div class="relative w-full h-full bg-[#020617] rounded-[2rem] overflow-hidden z-30 flex flex-col">
-                            <div class="bg-brand p-4 pt-8 border-b border-white/10 flex items-center gap-2">
-                                <div class="w-6 h-6 bg-emerald-500/20 rounded-full flex items-center justify-center text-[10px]">🤖</div>
-                                <span class="text-white text-xs font-bold">LaborMandi AI</span>
-                            </div>
-                            <div class="flex-1 p-3 space-y-3">
-                                <div class="text-[8px] text-center text-slate-600">Today, 09:41 AM</div>
-                                <div class="bg-white/5 text-slate-300 text-[9px] p-2.5 rounded-r-xl rounded-bl-xl border border-white/5 w-[90%]">
-                                    Hi, I need to verify attendance for Site Alpha and process their weekly payments.
-                                </div>
-                                <div class="bg-emerald-500/10 text-emerald-100 text-[9px] p-2.5 rounded-l-xl rounded-br-xl border border-emerald-500/10 ml-auto w-[90%]">
-                                    Done! Attendance verified via GPS. ₹45,200 is ready. Should I proceed?
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hidden md:flex absolute top-[10%] -left-[45%] z-40 glass-card p-3 rounded-2xl items-center gap-3 shadow-2xl animate-float-slow w-48">
-                        <div class="absolute top-1/2 -right-10 w-10 h-px border-b border-dashed border-emerald-500/30"></div>
-                        <div class="text-2xl">🏆</div>
-                        <div>
-                            <div class="text-[10px] font-bold text-white uppercase tracking-wider">#1 App</div>
-                            <div class="text-[8px] text-slate-400 font-medium">Best workforce AI engine</div>
-                        </div>
-                    </div>
-
-                    <div class="hidden md:block absolute top-[45%] -left-[55%] z-40 glass-card p-4 rounded-2xl w-[150px] shadow-2xl animate-float-delayed">
-                        <div class="absolute top-[20%] -right-12 w-12 h-16 border-t border-r border-dashed border-emerald-500/30 rounded-tr-lg"></div>
-                        <div class="flex items-center gap-1.5 mb-3">
-                            <span class="text-[9px] text-emerald-400 font-bold uppercase">Time Saved</span>
-                        </div>
-                        <div class="h-8 w-full relative mb-1">
-                            <svg class="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 30">
-                                <path d="M0,20 C20,25 30,5 50,15 C70,25 80,0 100,5" fill="none" stroke="#34d399" stroke-width="2.5" />
-                                <circle cx="50" cy="15" r="3.5" fill="#020617" stroke="#34d399" stroke-width="2.5" />
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-6 relative z-20 pt-8 lg:pt-0" data-aos="fade-up" data-aos-duration="1000">
+                    <h1 class="font-display text-5xl sm:text-6xl lg:text-[72px] font-black leading-[1.05] tracking-tight mb-8 text-white max-w-xl">
+                        Workforce <br>
+                        Management <br>
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-emerald-200 to-indigo-400 animate-text-shimmer bg-[length:200%_auto] drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">Revolutionized</span> 
+                        with
+                        <span class="inline-flex items-center justify-center w-12 h-12 lg:w-16 lg:h-16 bg-[#000033] rounded-2xl border border-brand-light/30 align-middle mx-1 lg:mx-2 shadow-[0_0_25px_rgba(51,51,255,0.25)]">
+                            <svg class="w-6 h-6 lg:w-8 lg:h-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
+                        </span>
+                        AI
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-400 mb-10 max-w-md leading-relaxed font-light">
+                        Boost productivity, enhance worker experience, and streamline operations with our cutting-edge AI-powered technology.
+                    </p>
+                    <div class="relative max-w-md flex items-center bg-white/[0.03] border border-white/10 rounded-full p-1.5 focus-within:border-emerald-500/50 focus-within:bg-white/[0.05] transition-all duration-300 shadow-[0_15px_35px_-10px_rgba(0,0,0,0.8)]">
+                        <div class="pl-4 text-slate-500">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect><polyline points="3 7 12 13 21 7"></polyline></svg>
                         </div>
-                        <div class="font-display text-xl font-black text-white">45<span class="text-[10px] text-slate-500 font-normal ml-1 tracking-normal">hrs/wk</span></div>
-                    </div>
-
-                    <div class="hidden md:block absolute bottom-[5%] -right-[35%] z-40 glass-card p-4 rounded-2xl shadow-2xl animate-float-slow w-36">
-                        <div class="absolute -top-10 -left-6 w-8 h-10 border-b border-l border-dashed border-emerald-500/30 rounded-bl-lg"></div>
-                        <div class="flex justify-center -space-x-2 mb-2">
-                            <div class="w-7 h-7 rounded-full border border-[#020617] bg-emerald-500 text-[10px] flex items-center justify-center text-white font-bold">R</div>
-                            <div class="w-7 h-7 rounded-full border border-[#020617] bg-indigo-500 text-[10px] flex items-center justify-center text-white font-bold">S</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-sm font-bold text-white">100K+</div>
-                            <div class="text-[7px] uppercase tracking-widest text-emerald-400 font-black mt-1">Reliable Users</div>
-                        </div>
+                        <input type="email" placeholder="Enter your email" class="w-full bg-transparent text-white px-3 py-3 text-sm focus:outline-none placeholder-slate-600">
+                        <button class="bg-brand hover:bg-brand-light text-white font-bold text-xs sm:text-sm px-6 py-3.5 rounded-full transition-all shrink-0 shadow-[0_0_20px_rgba(51,51,255,0.4)] hover:shadow-[0_0_30px_rgba(52,211,153,0.3)]">
+                            Get Started
+                        </button>
                     </div>
                 </div>
 
+                <div class="lg:col-span-6 relative flex justify-center items-center mt-12 lg:mt-0" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                    <div class="relative w-[240px] sm:w-[280px]">
+                        <div class="relative w-full aspect-[1/2.15] bg-slate-900 rounded-[2.5rem] p-2 shadow-[0_30px_80px_-15px_rgba(0,102,102,0.5)] border border-slate-700 overflow-hidden z-30 ring-1 ring-slate-800 transition-transform duration-700 hover:-translate-y-2">
+                            <div class="absolute top-2.5 left-1/2 -translate-x-1/2 w-[30%] h-4 bg-slate-900 rounded-b-xl z-40 flex items-center justify-center shadow-inner">
+                                <div class="w-6 h-1 bg-slate-800 rounded-full"></div>
+                            </div>
+                            <div class="relative w-full h-full bg-[#020617] rounded-[2rem] overflow-hidden z-30 flex flex-col">
+                                <div class="bg-brand p-4 pt-8 border-b border-white/10 flex items-center gap-2">
+                                    <div class="w-6 h-6 bg-emerald-500/20 rounded-full flex items-center justify-center text-[10px]">🤖</div>
+                                    <span class="text-white text-xs font-bold">LaborMandi AI</span>
+                                </div>
+                                <div class="flex-1 p-3 space-y-3">
+                                    <div class="text-[8px] text-center text-slate-600">Today, 09:41 AM</div>
+                                    <div class="bg-white/5 text-slate-300 text-[9px] p-2.5 rounded-r-xl rounded-bl-xl border border-white/5 w-[90%]">
+                                        Hi, I need to verify attendance for Site Alpha and process their weekly payments.
+                                    </div>
+                                    <div class="bg-emerald-500/10 text-emerald-100 text-[9px] p-2.5 rounded-l-xl rounded-br-xl border border-emerald-500/10 ml-auto w-[90%]">
+                                        Done! Attendance verified via GPS. ₹45,200 is ready. Should I proceed?
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hidden md:flex absolute top-[10%] -left-[45%] z-40 glass-card p-3 rounded-2xl items-center gap-3 shadow-2xl animate-float-slow w-48">
+                            <div class="absolute top-1/2 -right-10 w-10 h-px border-b border-dashed border-emerald-500/30"></div>
+                            <div class="text-2xl">🏆</div>
+                            <div>
+                                <div class="text-[10px] font-bold text-white uppercase tracking-wider">#1 App</div>
+                                <div class="text-[8px] text-slate-400 font-medium">Best workforce AI engine</div>
+                            </div>
+                        </div>
+
+                        <div class="hidden md:block absolute top-[45%] -left-[55%] z-40 glass-card p-4 rounded-2xl w-[150px] shadow-2xl animate-float-delayed">
+                            <div class="absolute top-[20%] -right-12 w-12 h-16 border-t border-r border-dashed border-emerald-500/30 rounded-tr-lg"></div>
+                            <div class="flex items-center gap-1.5 mb-3">
+                                <span class="text-[9px] text-emerald-400 font-bold uppercase">Time Saved</span>
+                            </div>
+                            <div class="h-8 w-full relative mb-1">
+                                <svg class="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 30">
+                                    <path d="M0,20 C20,25 30,5 50,15 C70,25 80,0 100,5" fill="none" stroke="#34d399" stroke-width="2.5" />
+                                    <circle cx="50" cy="15" r="3.5" fill="#020617" stroke="#34d399" stroke-width="2.5" />
+                                </svg>
+                            </div>
+                            <div class="font-display text-xl font-black text-white">45<span class="text-[10px] text-slate-500 font-normal ml-1 tracking-normal">hrs/wk</span></div>
+                        </div>
+
+                        <div class="hidden md:block absolute bottom-[5%] -right-[35%] z-40 glass-card p-4 rounded-2xl shadow-2xl animate-float-slow w-36">
+                            <div class="absolute -top-10 -left-6 w-8 h-10 border-b border-l border-dashed border-emerald-500/30 rounded-bl-lg"></div>
+                            <div class="flex justify-center -space-x-2 mb-2">
+                                <div class="w-7 h-7 rounded-full border border-[#020617] bg-emerald-500 text-[10px] flex items-center justify-center text-white font-bold">R</div>
+                                <div class="w-7 h-7 rounded-full border border-[#020617] bg-indigo-500 text-[10px] flex items-center justify-center text-white font-bold">S</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-sm font-bold text-white">100K+</div>
+                                <div class="text-[7px] uppercase tracking-widest text-emerald-400 font-black mt-1">Reliable Users</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <section id="services" class="py-20 lg:py-28 relative z-10 bg-slate-50 border-y border-slate-200 overflow-hidden">
-
-        <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[linear-gradient(rgba(0,0,102,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,102,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none">
-        </div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[linear-gradient(rgba(0,0,102,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,102,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20" data-aos="fade-up">
-                <div
-                    class="inline-block bg-white text-brand font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest mb-6 border border-slate-200 shadow-sm">
+                <div class="inline-block bg-white text-brand font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest mb-6 border border-slate-200 shadow-sm">
                     Platform Features</div>
                 <h2 class="font-display text-3xl md:text-5xl font-extrabold mb-6 text-slate-900 leading-tight">
                     Comprehensive <br class="hidden sm:block">
@@ -332,13 +157,9 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-
-                <div class="bg-white rounded-[2rem] p-6 lg:p-8 border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,102,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(37,99,235,0.15)] hover:-translate-y-2 transition-all duration-300 group"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-500 transition-all duration-300 shadow-inner">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" class="text-blue-600 group-hover:text-white transition-colors">
+                <div class="bg-white rounded-[2rem] p-6 lg:p-8 border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,102,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(37,99,235,0.15)] hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-500 transition-all duration-300 shadow-inner">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-blue-600 group-hover:text-white transition-colors">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                             <polyline points="14 2 14 8 20 8"></polyline>
                             <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -350,12 +171,9 @@
                         digitally with electronic signatures and legal compliance.</p>
                 </div>
 
-                <div class="bg-white rounded-[2rem] p-6 lg:p-8 border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,102,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(16,185,129,0.15)] hover:-translate-y-2 transition-all duration-300 group"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-emerald-500 transition-all duration-300 shadow-inner">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" class="text-emerald-600 group-hover:text-white transition-colors">
+                <div class="bg-white rounded-[2rem] p-6 lg:p-8 border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,102,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(16,185,129,0.15)] hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-emerald-500 transition-all duration-300 shadow-inner">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-emerald-600 group-hover:text-white transition-colors">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                             <circle cx="12" cy="10" r="3"></circle>
                         </svg>
@@ -365,12 +183,9 @@
                         are present exactly at the designated work sites.</p>
                 </div>
 
-                <div class="bg-white rounded-[2rem] p-6 lg:p-8 border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,102,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(139,92,246,0.15)] hover:-translate-y-2 transition-all duration-300 group"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-violet-50 border border-violet-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-violet-500 transition-all duration-300 shadow-inner">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" class="text-violet-600 group-hover:text-white transition-colors">
+                <div class="bg-white rounded-[2rem] p-6 lg:p-8 border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,102,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(139,92,246,0.15)] hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 rounded-2xl bg-violet-50 border border-violet-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-violet-500 transition-all duration-300 shadow-inner">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-violet-600 group-hover:text-white transition-colors">
                             <circle cx="12" cy="12" r="10"></circle>
                             <polyline points="12 6 12 12 16 14"></polyline>
                         </svg>
@@ -380,12 +195,9 @@
                         overtime, and custom contractual agreements.</p>
                 </div>
 
-                <div class="bg-white rounded-[2rem] p-6 lg:p-8 border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,102,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(245,158,11,0.15)] hover:-translate-y-2 transition-all duration-300 group"
-                    data-aos="fade-up" data-aos-delay="400">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-amber-500 transition-all duration-300 shadow-inner">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" class="text-amber-600 group-hover:text-white transition-colors">
+                <div class="bg-white rounded-[2rem] p-6 lg:p-8 border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,102,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(245,158,11,0.15)] hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-amber-500 transition-all duration-300 shadow-inner">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-amber-600 group-hover:text-white transition-colors">
                             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                             <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                         </svg>
@@ -395,12 +207,9 @@
                         integration and multiple payment method options.</p>
                 </div>
 
-                <div class="bg-white rounded-[2rem] p-6 lg:p-8 border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,102,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(6,182,212,0.15)] hover:-translate-y-2 transition-all duration-300 group"
-                    data-aos="fade-up" data-aos-delay="500">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-cyan-50 border border-cyan-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-cyan-500 transition-all duration-300 shadow-inner">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" class="text-cyan-600 group-hover:text-white transition-colors">
+                <div class="bg-white rounded-[2rem] p-6 lg:p-8 border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,102,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(6,182,212,0.15)] hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-50 border border-cyan-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-cyan-500 transition-all duration-300 shadow-inner">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-cyan-600 group-hover:text-white transition-colors">
                             <line x1="18" y1="20" x2="18" y2="10"></line>
                             <line x1="12" y1="20" x2="12" y2="4"></line>
                             <line x1="6" y1="20" x2="6" y2="14"></line>
@@ -411,12 +220,9 @@
                         to track workforce productivity and cost trends.</p>
                 </div>
 
-                <div class="bg-white rounded-[2rem] p-6 lg:p-8 border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,102,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(51,51,255,0.15)] hover:-translate-y-2 transition-all duration-300 group"
-                    data-aos="fade-up" data-aos-delay="600">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand transition-all duration-300 shadow-inner">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" class="text-brand group-hover:text-white transition-colors">
+                <div class="bg-white rounded-[2rem] p-6 lg:p-8 border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,102,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(51,51,255,0.15)] hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand transition-all duration-300 shadow-inner">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-brand group-hover:text-white transition-colors">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                             <circle cx="9" cy="7" r="4"></circle>
                             <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -427,40 +233,27 @@
                     <p class="text-slate-600 text-sm leading-relaxed">Efficiently manage your entire workforce ecosystem
                         with unified digital profiles and tracking.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
     <section id="mission-new" class="py-16 relative bg-[#020617] overflow-hidden">
-        <div
-            class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(0,0,102,0.15)_0%,transparent_50%),radial-gradient(circle_at_80%_70%,rgba(51,51,255,0.1)_0%,transparent_50%)] pointer-events-none">
-        </div>
+        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(0,0,102,0.15)_0%,transparent_50%),radial-gradient(circle_at_80%_70%,rgba(51,51,255,0.1)_0%,transparent_50%)] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="glass-panel rounded-[3rem] p-10 md:p-16 border border-white/10 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.8)] relative overflow-hidden group"
-                data-aos="fade-up">
-
-                <div
-                    class="absolute -top-[50%] -left-[10%] w-[120%] h-[200%] bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.03)_50%,transparent_75%)] pointer-events-none group-hover:translate-x-[10%] transition-transform duration-1000">
-                </div>
+            <div class="glass-panel rounded-[3rem] p-10 md:p-16 border border-white/10 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.8)] relative overflow-hidden group" data-aos="fade-up">
+                <div class="absolute -top-[50%] -left-[10%] w-[120%] h-[200%] bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.03)_50%,transparent_75%)] pointer-events-none group-hover:translate-x-[10%] transition-transform duration-1000"></div>
 
                 <div class="grid lg:grid-cols-12 gap-12 items-end">
-
                     <div class="lg:col-span-7">
-                        <div
-                            class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-brand-light/10 border border-brand-light/30 mb-8 shadow-[0_0_15px_rgba(51,51,255,0.2)]">
+                        <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-brand-light/10 border border-brand-light/30 mb-8 shadow-[0_0_15px_rgba(51,51,255,0.2)]">
                             <div class="w-1.5 h-1.5 rounded-full bg-brand-light animate-pulse"></div>
-                            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-300">The Core
-                                Mission</span>
+                            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-300">The Core Mission</span>
                         </div>
 
-                        <h2
-                            class="font-display text-4xl md:text-6xl font-black text-white leading-[1.05] tracking-tighter mb-8">
+                        <h2 class="font-display text-4xl md:text-6xl font-black text-white leading-[1.05] tracking-tighter mb-8">
                             Bridging gaps between <br>
-                            <span
-                                class="bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-indigo-400">Workers
-                                & Employers.</span>
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-indigo-400">Workers & Employers.</span>
                         </h2>
 
                         <p class="text-slate-400 text-lg md:text-xl font-light leading-relaxed max-w-xl">
@@ -469,69 +262,46 @@
                     </div>
 
                     <div class="lg:col-span-5 space-y-4">
-
-                        <div
-                            class="group/item relative bg-white/5 border border-white/10 p-5 rounded-2xl flex items-center justify-between hover:bg-white/10 hover:border-indigo-500/50 transition-all duration-500 shadow-xl overflow-hidden">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-r from-brand-light/0 via-brand-light/5 to-brand-light/0 -translate-x-full group-hover/item:translate-x-full transition-transform duration-1000">
-                            </div>
+                        <div class="group/item relative bg-white/5 border border-white/10 p-5 rounded-2xl flex items-center justify-between hover:bg-white/10 hover:border-indigo-500/50 transition-all duration-500 shadow-xl overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-brand-light/0 via-brand-light/5 to-brand-light/0 -translate-x-full group-hover/item:translate-x-full transition-transform duration-1000"></div>
                             <div class="flex items-center gap-5">
-                                <div
-                                    class="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center border border-indigo-400/20 group-hover/item:border-indigo-400/50 transition-colors">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc"
-                                        stroke-width="1.5">
+                                <div class="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center border border-indigo-400/20 group-hover/item:border-indigo-400/50 transition-colors">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="1.5">
                                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
                                         <circle cx="12" cy="12" r="3" />
                                     </svg>
                                 </div>
                                 <span class="text-xl font-bold text-white tracking-tight">Transparency</span>
                             </div>
-                            <div
-                                class="text-[10px] font-bold text-indigo-400 tracking-widest uppercase opacity-40 group-hover/item:opacity-100 transition-opacity">
-                                01</div>
+                            <div class="text-[10px] font-bold text-indigo-400 tracking-widest uppercase opacity-40 group-hover/item:opacity-100 transition-opacity">01</div>
                         </div>
 
-                        <div
-                            class="group/item relative bg-white/5 border border-white/10 p-5 rounded-2xl flex items-center justify-between hover:bg-white/10 hover:border-cyan-500/50 transition-all duration-500 shadow-xl overflow-hidden">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-r from-cyan-400/0 via-cyan-400/5 to-cyan-400/0 -translate-x-full group-hover/item:translate-x-full transition-transform duration-1000">
-                            </div>
+                        <div class="group/item relative bg-white/5 border border-white/10 p-5 rounded-2xl flex items-center justify-between hover:bg-white/10 hover:border-cyan-500/50 transition-all duration-500 shadow-xl overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-cyan-400/0 via-cyan-400/5 to-cyan-400/0 -translate-x-full group-hover/item:translate-x-full transition-transform duration-1000"></div>
                             <div class="flex items-center gap-5">
-                                <div
-                                    class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center border border-cyan-400/20 group-hover/item:border-cyan-400/50 transition-colors">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22d3ee"
-                                        stroke-width="1.5">
+                                <div class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center border border-cyan-400/20 group-hover/item:border-cyan-400/50 transition-colors">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.5">
                                         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                                     </svg>
                                 </div>
                                 <span class="text-xl font-bold text-white tracking-tight">Efficiency</span>
                             </div>
-                            <div
-                                class="text-[10px] font-bold text-cyan-400 tracking-widest uppercase opacity-40 group-hover/item:opacity-100 transition-opacity">
-                                02</div>
+                            <div class="text-[10px] font-bold text-cyan-400 tracking-widest uppercase opacity-40 group-hover/item:opacity-100 transition-opacity">02</div>
                         </div>
 
-                        <div
-                            class="group/item relative bg-white/5 border border-white/10 p-5 rounded-2xl flex items-center justify-between hover:bg-white/10 hover:border-emerald-500/50 transition-all duration-500 shadow-xl overflow-hidden">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-r from-emerald-400/0 via-emerald-400/5 to-emerald-400/0 -translate-x-full group-hover/item:translate-x-full transition-transform duration-1000">
-                            </div>
+                        <div class="group/item relative bg-white/5 border border-white/10 p-5 rounded-2xl flex items-center justify-between hover:bg-white/10 hover:border-emerald-500/50 transition-all duration-500 shadow-xl overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-emerald-400/0 via-emerald-400/5 to-emerald-400/0 -translate-x-full group-hover/item:translate-x-full transition-transform duration-1000"></div>
                             <div class="flex items-center gap-5">
-                                <div
-                                    class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center border border-emerald-400/20 group-hover/item:border-emerald-400/50 transition-colors">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34d399"
-                                        stroke-width="1.5">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center border border-emerald-400/20 group-hover/item:border-emerald-400/50 transition-colors">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.5">
                                         <path d="M16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
                                         <path d="M7 21h10M12 3v18" />
                                     </svg>
                                 </div>
                                 <span class="text-xl font-bold text-white tracking-tight">Fair Treatment</span>
                             </div>
-                            <div
-                                class="text-[10px] font-bold text-emerald-400 tracking-widest uppercase opacity-40 group-hover/item:opacity-100 transition-opacity">
-                                03</div>
+                            <div class="text-[10px] font-bold text-emerald-400 tracking-widest uppercase opacity-40 group-hover/item:opacity-100 transition-opacity">03</div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -539,179 +309,127 @@
     </section>
 
     <section id="vision-new" class="py-16 relative bg-[#020617] overflow-hidden">
-        <div
-            class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none">
-        </div>
+        <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="grid lg:grid-cols-12 gap-16 items-start">
-
                 <div class="lg:col-span-5 lg:sticky lg:top-32">
-                    <div
-                        class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 mb-8 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                    <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 mb-8 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                         <div class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
-                        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-300">The Strategic
-                            Vision</span>
+                        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-300">The Strategic Vision</span>
                     </div>
 
-                    <h2
-                        class="font-display text-4xl md:text-6xl font-black text-white leading-[1.05] tracking-tighter mb-8">
+                    <h2 class="font-display text-4xl md:text-6xl font-black text-white leading-[1.05] tracking-tighter mb-8">
                         Revolutionizing <br>
-                        <span
-                            class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 via-indigo-200 to-indigo-400">The
-                            Workforce.</span>
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 via-indigo-200 to-indigo-400">The Workforce.</span>
                     </h2>
 
                     <p class="text-slate-400 text-lg font-light leading-relaxed max-w-sm">
-                        Leveraging emerging technologies to stay ahead of industry needs and empower the backbone of our
-                        economy.
+                        Leveraging emerging technologies to stay ahead of industry needs and empower the backbone of our economy.
                     </p>
                 </div>
 
                 <div class="lg:col-span-7 space-y-12 relative">
-                    <div
-                        class="absolute left-7 top-4 bottom-4 w-px bg-gradient-to-b from-indigo-500/50 via-emerald-500/30 to-transparent hidden sm:block">
-                    </div>
+                    <div class="absolute left-7 top-4 bottom-4 w-px bg-gradient-to-b from-indigo-500/50 via-emerald-500/30 to-transparent hidden sm:block"></div>
 
                     <div class="relative group" data-aos="fade-left">
                         <div class="flex items-start gap-8">
-                            <div
-                                class="w-14 h-14 shrink-0 rounded-2xl bg-[#0a0f24] border border-white/10 flex items-center justify-center relative z-10 group-hover:border-indigo-500/50 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.2)] transition-all duration-500">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc"
-                                    stroke-width="1.5">
+                            <div class="w-14 h-14 shrink-0 rounded-2xl bg-[#0a0f24] border border-white/10 flex items-center justify-center relative z-10 group-hover:border-indigo-500/50 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.2)] transition-all duration-500">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="1.5">
                                     <circle cx="12" cy="12" r="10" />
-                                    <path
-                                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                                 </svg>
                             </div>
-                            <div
-                                class="glass-panel p-8 rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors w-full">
-                                <h4
-                                    class="text-xl font-bold text-white mb-2 tracking-tight group-hover:text-indigo-300 transition-colors">
-                                    Global Impact</h4>
-                                <p class="text-slate-400 text-sm leading-relaxed">Transforming workforce management
-                                    across industries and geographical boundaries to create a borderless labor
-                                    ecosystem.</p>
+                            <div class="glass-panel p-8 rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors w-full">
+                                <h4 class="text-xl font-bold text-white mb-2 tracking-tight group-hover:text-indigo-300 transition-colors">Global Impact</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed">Transforming workforce management across industries and geographical boundaries to create a borderless labor ecosystem.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="relative group" data-aos="fade-left" data-aos-delay="100">
                         <div class="flex items-start gap-8">
-                            <div
-                                class="w-14 h-14 shrink-0 rounded-2xl bg-[#0a0f24] border border-white/10 flex items-center justify-center relative z-10 group-hover:border-cyan-500/50 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] transition-all duration-500">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22d3ee"
-                                    stroke-width="1.5">
+                            <div class="w-14 h-14 shrink-0 rounded-2xl bg-[#0a0f24] border border-white/10 flex items-center justify-center relative z-10 group-hover:border-cyan-500/50 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] transition-all duration-500">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.5">
                                     <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                                 </svg>
                             </div>
-                            <div
-                                class="glass-panel p-8 rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors w-full">
-                                <h4
-                                    class="text-xl font-bold text-white mb-2 tracking-tight group-hover:text-cyan-300 transition-colors">
-                                    Continuous Innovation</h4>
-                                <p class="text-slate-400 text-sm leading-relaxed">Leveraging emerging technologies like
-                                    AI and Blockchain to stay ahead of industry needs and eliminate inefficiencies.</p>
+                            <div class="glass-panel p-8 rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors w-full">
+                                <h4 class="text-xl font-bold text-white mb-2 tracking-tight group-hover:text-cyan-300 transition-colors">Continuous Innovation</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed">Leveraging emerging technologies like AI and Blockchain to stay ahead of industry needs and eliminate inefficiencies.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="relative group" data-aos="fade-left" data-aos-delay="200">
                         <div class="flex items-start gap-8">
-                            <div
-                                class="w-14 h-14 shrink-0 rounded-2xl bg-[#0a0f24] border border-white/10 flex items-center justify-center relative z-10 group-hover:border-emerald-500/50 group-hover:shadow-[0_0_20px_rgba(52,211,153,0.2)] transition-all duration-500">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#34d399"
-                                    stroke-width="1.5">
+                            <div class="w-14 h-14 shrink-0 rounded-2xl bg-[#0a0f24] border border-white/10 flex items-center justify-center relative z-10 group-hover:border-emerald-500/50 group-hover:shadow-[0_0_20px_rgba(52,211,153,0.2)] transition-all duration-500">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.5">
                                     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                                     <circle cx="9" cy="7" r="4" />
                                     <path d="M19 8v6M16 11h6" />
                                 </svg>
                             </div>
-                            <div
-                                class="glass-panel p-8 rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors w-full">
-                                <h4
-                                    class="text-xl font-bold text-white mb-2 tracking-tight group-hover:text-emerald-300 transition-colors">
-                                    Worker Empowerment</h4>
-                                <p class="text-slate-400 text-sm leading-relaxed">Providing tools and resources that
-                                    give workers complete control over their digital identities and professional growth.
-                                </p>
+                            <div class="glass-panel p-8 rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors w-full">
+                                <h4 class="text-xl font-bold text-white mb-2 tracking-tight group-hover:text-emerald-300 transition-colors">Worker Empowerment</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed">Providing tools and resources that give workers complete control over their digital identities and professional growth.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="relative group" data-aos="fade-left" data-aos-delay="300">
                         <div class="flex items-start gap-8">
-                            <div
-                                class="w-14 h-14 shrink-0 rounded-2xl bg-[#0a0f24] border border-white/10 flex items-center justify-center relative z-10 group-hover:border-indigo-500/50 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.2)] transition-all duration-500">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc"
-                                    stroke-width="1.5">
+                            <div class="w-14 h-14 shrink-0 rounded-2xl bg-[#0a0f24] border border-white/10 flex items-center justify-center relative z-10 group-hover:border-indigo-500/50 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.2)] transition-all duration-500">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="1.5">
                                     <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
                                     <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
                                     <path d="M7 21h10M12 3v18" />
                                 </svg>
                             </div>
-                            <div
-                                class="glass-panel p-8 rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors w-full">
-                                <h4
-                                    class="text-xl font-bold text-white mb-2 tracking-tight group-hover:text-indigo-300 transition-colors">
-                                    Fair Employment</h4>
-                                <p class="text-slate-400 text-sm leading-relaxed">Ensuring fair wages, transparent
-                                    contracts, and respectful treatment for every individual on the platform.</p>
+                            <div class="glass-panel p-8 rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors w-full">
+                                <h4 class="text-xl font-bold text-white mb-2 tracking-tight group-hover:text-indigo-300 transition-colors">Fair Employment</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed">Ensuring fair wages, transparent contracts, and respectful treatment for every individual on the platform.</p>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
+
     <section id="investors" class="py-16 relative z-10 overflow-hidden border-t border-white/5">
-        <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[300px] bg-brand/10 blur-[100px] pointer-events-none">
-        </div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[300px] bg-brand/10 blur-[100px] pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
-                <div class="text-xs font-bold uppercase tracking-widest text-brand-light mb-3">Why Investors Choose Us
-                </div>
-                <h2 class="font-display text-3xl md:text-5xl font-extrabold mb-4">Tap into India's massive <br><span
-                        class="text-gradient">informal economy.</span></h2>
-                <p class="text-sm md:text-lg text-slate-400 font-light">Proven market demand and strong government
-                    support.</p>
+                <div class="text-xs font-bold uppercase tracking-widest text-brand-light mb-3">Why Investors Choose Us</div>
+                <h2 class="font-display text-3xl md:text-5xl font-extrabold mb-4">Tap into India's massive <br><span class="text-gradient">informal economy.</span></h2>
+                <p class="text-sm md:text-lg text-slate-400 font-light">Proven market demand and strong government support.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="glass-card p-6 rounded-[2rem] text-center group" data-aos="zoom-in" data-aos-delay="100">
-                    <div
-                        class="font-display text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform">
-                        450M</div>
+                    <div class="font-display text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform">450M</div>
                     <div class="h-px w-10 bg-brand-light mx-auto mb-3"></div>
                     <h4 class="text-xs font-bold text-white mb-1 uppercase tracking-wide">Massive Market</h4>
                     <p class="text-xs text-slate-400">Informal workers representing 85% of total employment.</p>
                 </div>
                 <div class="glass-card p-6 rounded-[2rem] text-center group" data-aos="zoom-in" data-aos-delay="200">
-                    <div
-                        class="font-display text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform">
-                        $30B</div>
+                    <div class="font-display text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform">$30B</div>
                     <div class="h-px w-10 bg-brand-light mx-auto mb-3"></div>
                     <h4 class="text-xs font-bold text-white mb-1 uppercase tracking-wide">Growth Potential</h4>
                     <p class="text-xs text-slate-400">Market size by 2030 with 25-30% CAGR in digital adoption.</p>
                 </div>
                 <div class="glass-card p-6 rounded-[2rem] text-center group" data-aos="zoom-in" data-aos-delay="300">
-                    <div
-                        class="font-display text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform">
-                        1B+</div>
+                    <div class="font-display text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform">1B+</div>
                     <div class="h-px w-10 bg-brand-light mx-auto mb-3"></div>
                     <h4 class="text-xs font-bold text-white mb-1 uppercase tracking-wide">Digital Ready</h4>
                     <p class="text-xs text-slate-400">Smartphone users by 2026 with 9B+ monthly UPI transactions.</p>
                 </div>
                 <div class="glass-card p-6 rounded-[2rem] text-center group" data-aos="zoom-in" data-aos-delay="400">
-                    <div
-                        class="font-display text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform">
-                        Govt</div>
+                    <div class="font-display text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform">Govt</div>
                     <div class="h-px w-10 bg-brand-light mx-auto mb-3"></div>
                     <h4 class="text-xs font-bold text-white mb-1 uppercase tracking-wide">Policy Support</h4>
-                    <p class="text-xs text-slate-400">Strong backing through Digital India & Skill India initiatives.
-                    </p>
+                    <p class="text-xs text-slate-400">Strong backing through Digital India & Skill India initiatives.</p>
                 </div>
             </div>
         </div>
@@ -725,244 +443,183 @@
 
             <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
                 <details class="group glass-card rounded-2xl cursor-pointer">
-                    <summary
-                        class="flex items-center justify-between p-5 md:p-6 font-semibold text-white text-sm md:text-base">
+                    <summary class="flex items-center justify-between p-5 md:p-6 font-semibold text-white text-sm md:text-base">
                         How does the app help in managing daily wage workers?
-                        <svg class="w-5 h-5 text-brand-light group-open:rotate-180 transition-transform shrink-0 ml-4"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="w-5 h-5 text-brand-light group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </summary>
-                    <div
-                        class="px-5 md:px-6 pb-5 md:pb-6 text-slate-400 text-xs md:text-sm leading-relaxed border-t border-white/5 pt-4">
-                        The app digitizes everything from onboarding to daily attendance and payments, streamlining
-                        operations and removing manual paperwork completely.</div>
+                    <div class="px-5 md:px-6 pb-5 md:pb-6 text-slate-400 text-xs md:text-sm leading-relaxed border-t border-white/5 pt-4">
+                        The app digitizes everything from onboarding to daily attendance and payments, streamlining operations and removing manual paperwork completely.
+                    </div>
                 </details>
 
                 <details class="group glass-card rounded-2xl cursor-pointer">
-                    <summary
-                        class="flex items-center justify-between p-5 md:p-6 font-semibold text-white text-sm md:text-base">
+                    <summary class="flex items-center justify-between p-5 md:p-6 font-semibold text-white text-sm md:text-base">
                         Is the attendance tracking feature GPS-based?
-                        <svg class="w-5 h-5 text-brand-light group-open:rotate-180 transition-transform shrink-0 ml-4"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="w-5 h-5 text-brand-light group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </summary>
-                    <div
-                        class="px-5 md:px-6 pb-5 md:pb-6 text-slate-400 text-xs md:text-sm leading-relaxed border-t border-white/5 pt-4">
-                        Yes, it uses advanced geofencing to ensure workers can only punch in when they are physically
-                        present at the designated work site.</div>
+                    <div class="px-5 md:px-6 pb-5 md:pb-6 text-slate-400 text-xs md:text-sm leading-relaxed border-t border-white/5 pt-4">
+                        Yes, it uses advanced geofencing to ensure workers can only punch in when they are physically present at the designated work site.
+                    </div>
                 </details>
 
                 <details class="group glass-card rounded-2xl cursor-pointer">
-                    <summary
-                        class="flex items-center justify-between p-5 md:p-6 font-semibold text-white text-sm md:text-base">
+                    <summary class="flex items-center justify-between p-5 md:p-6 font-semibold text-white text-sm md:text-base">
                         How secure is the payment processing within the app?
-                        <svg class="w-5 h-5 text-brand-light group-open:rotate-180 transition-transform shrink-0 ml-4"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="w-5 h-5 text-brand-light group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </summary>
-                    <div
-                        class="px-5 md:px-6 pb-5 md:pb-6 text-slate-400 text-xs md:text-sm leading-relaxed border-t border-white/5 pt-4">
-                        We use bank-grade encryption and native UPI integrations to ensure 100% secure, direct-to-bank
-                        automated transfers.</div>
+                    <div class="px-5 md:px-6 pb-5 md:pb-6 text-slate-400 text-xs md:text-sm leading-relaxed border-t border-white/5 pt-4">
+                        We use bank-grade encryption and native UPI integrations to ensure 100% secure, direct-to-bank automated transfers.
+                    </div>
                 </details>
 
                 <details class="group glass-card rounded-2xl cursor-pointer">
-                    <summary
-                        class="flex items-center justify-between p-5 md:p-6 font-semibold text-white text-sm md:text-base">
+                    <summary class="flex items-center justify-between p-5 md:p-6 font-semibold text-white text-sm md:text-base">
                         Can I manage contracts digitally through the app?
-                        <svg class="w-5 h-5 text-brand-light group-open:rotate-180 transition-transform shrink-0 ml-4"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="w-5 h-5 text-brand-light group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </summary>
-                    <div
-                        class="px-5 md:px-6 pb-5 md:pb-6 text-slate-400 text-xs md:text-sm leading-relaxed border-t border-white/5 pt-4">
-                        Absolutely. You can generate, share, and digitally sign legally compliant contracts directly
-                        from your mobile device.</div>
+                    <div class="px-5 md:px-6 pb-5 md:pb-6 text-slate-400 text-xs md:text-sm leading-relaxed border-t border-white/5 pt-4">
+                        Absolutely. You can generate, share, and digitally sign legally compliant contracts directly from your mobile device.
+                    </div>
                 </details>
             </div>
         </div>
     </section>
 
-
-
     <section id="contact" class="py-16 relative bg-[#020617] overflow-hidden border-t border-white/5">
-        <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,102,0.1)_0%,transparent_70%)] pointer-events-none">
-        </div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,102,0.1)_0%,transparent_70%)] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-
                 <div class="lg:col-span-7 group" data-aos="fade-up">
-                    <div
-                        class="h-full glass-panel rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden border border-white/10 hover:border-brand-light/30 transition-all duration-500 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.8)]">
-
-                        <div
-                            class="absolute -top-12 -left-12 w-24 h-24 bg-brand-light/10 rounded-full blur-3xl group-hover:bg-brand-light/20 transition-all">
-                        </div>
+                    <div class="h-full glass-panel rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden border border-white/10 hover:border-brand-light/30 transition-all duration-500 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.8)]">
+                        <div class="absolute -top-12 -left-12 w-24 h-24 bg-brand-light/10 rounded-full blur-3xl group-hover:bg-brand-light/20 transition-all"></div>
 
                         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 relative z-10">
                             <div>
-                                <div
-                                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light/10 border border-brand-light/20 mb-4">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light/10 border border-brand-light/20 mb-4">
                                     <div class="w-1.5 h-1.5 rounded-full bg-brand-light animate-pulse"></div>
-                                    <span
-                                        class="text-[9px] font-black uppercase tracking-[0.2em] text-indigo-300">Direct
-                                        Support</span>
+                                    <span class="text-[9px] font-black uppercase tracking-[0.2em] text-indigo-300">Direct Support</span>
                                 </div>
-                                <h2
-                                    class="font-display text-4xl md:text-5xl font-black text-white leading-tight tracking-tighter">
+                                <h2 class="font-display text-4xl md:text-5xl font-black text-white leading-tight tracking-tighter">
                                     Let's build the <br><span class="text-indigo-400">future together.</span>
                                 </h2>
                             </div>
                             <div class="hidden md:block text-right">
-                                <p class="text-slate-500 text-xs font-medium uppercase tracking-widest mb-1">Response
-                                    Time</p>
+                                <p class="text-slate-500 text-xs font-medium uppercase tracking-widest mb-1">Response Time</p>
                                 <p class="text-emerald-400 font-bold text-sm">Under 2 hours</p>
                             </div>
                         </div>
 
-<form id="contactForm" class="grid grid-cols-1 md:grid-cols-2 gap-5 relative z-10">
-    <div class="space-y-1">
-        <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Full Name</label>
-        <input type="text" name="Full_Name" required placeholder="John Doe"
-            class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-brand-light focus:bg-white/[0.08] transition-all placeholder:text-slate-700">
-    </div>
-    <div class="space-y-1">
-        <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Email Address</label>
-        <input type="email" name="Email" required placeholder="john@company.com"
-            class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-brand-light focus:bg-white/[0.08] transition-all placeholder:text-slate-700">
-    </div>
-    <div class="md:col-span-2 space-y-1">
-        <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Your Message</label>
-        <textarea name="Message" rows="4" required placeholder="Tell us about your requirements..."
-            class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-brand-light focus:bg-white/[0.08] transition-all resize-none placeholder:text-slate-700"></textarea>
-    </div>
-    <input type="hidden" id="recaptchaToken" name="recaptchaToken">
-    <button type="submit" id="contactSubmitBtn"
-        class="md:col-span-2 w-full bg-white text-brand font-black py-5 rounded-2xl text-sm uppercase tracking-widest hover:bg-indigo-50 hover:scale-[1.01] active:scale-95 transition-all shadow-[0_20px_40px_rgba(255,255,255,0.1)] group">
-        <span class="flex items-center justify-center gap-3">
-            Dispatch Message
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-        </span>
-    </button>
-</form>
-<p id="contactMsg" class="mt-4 text-center text-xs font-bold text-emerald-400 hidden">✓ Message dispatched! We'll get back to you shortly.</p>
+                        <form id="contactForm" class="grid grid-cols-1 md:grid-cols-2 gap-5 relative z-10">
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Full Name</label>
+                                <input type="text" name="Full_Name" required placeholder="John Doe" class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-brand-light focus:bg-white/[0.08] transition-all placeholder:text-slate-700">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Email Address</label>
+                                <input type="email" name="Email" required placeholder="john@company.com" class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-brand-light focus:bg-white/[0.08] transition-all placeholder:text-slate-700">
+                            </div>
+                            <div class="md:col-span-2 space-y-1">
+                                <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Your Message</label>
+                                <textarea name="Message" rows="4" required placeholder="Tell us about your requirements..." class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-brand-light focus:bg-white/[0.08] transition-all resize-none placeholder:text-slate-700"></textarea>
+                            </div>
+                            <input type="hidden" id="recaptchaToken" name="recaptchaToken">
+                            <button type="submit" id="contactSubmitBtn" class="md:col-span-2 w-full bg-white text-brand font-black py-5 rounded-2xl text-sm uppercase tracking-widest hover:bg-indigo-50 hover:scale-[1.01] active:scale-95 transition-all shadow-[0_20px_40px_rgba(255,255,255,0.1)] group">
+                                <span class="flex items-center justify-center gap-3">
+                                    Dispatch Message
+                                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </form>
+                        <p id="contactMsg" class="mt-4 text-center text-xs font-bold text-emerald-400 hidden">✓ Message dispatched! We'll get back to you shortly.</p>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5 flex flex-col gap-6" data-aos="fade-up" data-aos-delay="100">
-
-                    <div
-                        class="glass-panel p-8 rounded-[2.5rem] border border-white/5 hover:border-white/10 transition-all flex-1">
+                    <div class="glass-panel p-8 rounded-[2.5rem] border border-white/5 hover:border-white/10 transition-all flex-1">
                         <h3 class="text-xs font-black uppercase tracking-[0.3em] text-indigo-400 mb-8">Global HQ</h3>
                         <div class="space-y-6">
                             <div class="flex items-center gap-5 group cursor-pointer">
-                                <div
-                                    class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 group-hover:text-brand-light group-hover:border-brand-light transition-all">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
+                                <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 group-hover:text-brand-light group-hover:border-brand-light transition-all">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                                         <circle cx="12" cy="10" r="3" />
                                     </svg>
                                 </div>
                                 <div>
-                                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Mumbai,
-                                        India</p>
-                                    <p class="text-white text-sm font-medium mt-0.5 leading-relaxed">2/46, Bernald
-                                        Market, Sakinaka</p>
+                                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Mumbai, India</p>
+                                    <p class="text-white text-sm font-medium mt-0.5 leading-relaxed">2/46, Bernald Market, Sakinaka</p>
                                 </div>
                             </div>
 
                             <div class="flex items-center gap-5 group cursor-pointer">
-                                <div
-                                    class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 group-hover:text-cyan-400 group-hover:border-cyan-400 transition-all">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path
-                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 group-hover:text-cyan-400 group-hover:border-cyan-400 transition-all">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                                         <polyline points="22,6 12,13 2,6" />
                                     </svg>
                                 </div>
                                 <div>
-                                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Email
-                                        Inquiry</p>
+                                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Email Inquiry</p>
                                     <p class="text-indigo-300 text-sm font-bold mt-0.5">info@labormandi.com</p>
                                 </div>
                             </div>
 
                             <div class="flex items-center gap-5 group cursor-pointer">
-                                <div
-                                    class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-all">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path
-                                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
                                     </svg>
                                 </div>
                                 <div>
-                                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Fast Track
-                                    </p>
+                                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Fast Track</p>
                                     <p class="text-white text-sm font-medium mt-0.5">+91-7715994007</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div
-                        class="relative rounded-[2.5rem] p-8 bg-gradient-to-br from-brand via-brand-dark to-[#01030a] border border-white/10 overflow-hidden group shadow-[0_30px_60px_-15px_rgba(0,0,102,0.6)]">
-                        <div
-                            class="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
-                        </div>
+                    <div class="relative rounded-[2.5rem] p-8 bg-gradient-to-br from-brand via-brand-dark to-[#01030a] border border-white/10 overflow-hidden group shadow-[0_30px_60px_-15px_rgba(0,0,102,0.6)]">
+                        <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
 
                         <div class="relative z-10">
                             <div class="flex justify-between items-start mb-6">
-                                <h3 class="font-display text-2xl font-bold text-white tracking-tight">Priority Access
-                                </h3>
-                                <span
-                                    class="bg-emerald-500/20 text-emerald-400 text-[9px] font-black px-2 py-1 rounded-lg border border-emerald-500/30 uppercase tracking-tighter">Limited
-                                    Slots</span>
+                                <h3 class="font-display text-2xl font-bold text-white tracking-tight">Priority Access</h3>
+                                <span class="bg-emerald-500/20 text-emerald-400 text-[9px] font-black px-2 py-1 rounded-lg border border-emerald-500/30 uppercase tracking-tighter">Limited Slots</span>
                             </div>
-                            <p class="text-slate-400 text-xs mb-6 leading-relaxed">Secure your spot in the ecosystem.
-                                Early partners get <span class="text-white font-bold">0% processing fees</span> for the
-                                first 3 months.</p>
+                            <p class="text-slate-400 text-xs mb-6 leading-relaxed">Secure your spot in the ecosystem. Early partners get <span class="text-white font-bold">0% processing fees</span> for the first 3 months.</p>
 
                             <div class="space-y-3">
-                                <input type="email" placeholder="work@company.com"
-                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-xs text-white focus:outline-none focus:border-brand-light transition-all">
-                                <button
-                                    class="w-full bg-brand-light text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-widest hover:shadow-[0_0_20px_#3333ff] transition-all active:scale-95">Claim
-                                    Waitlist Spot</button>
+                                <input type="email" placeholder="work@company.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-xs text-white focus:outline-none focus:border-brand-light transition-all">
+                                <button class="w-full bg-brand-light text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-widest hover:shadow-[0_0_20px_#3333ff] transition-all active:scale-95">Claim Waitlist Spot</button>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
-
-
 
     <footer class="relative z-10 border-t border-white/10 bg-[#01030a] py-16">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
             <div class="md:col-span-1">
                 <a href="#home" class="flex items-center gap-3 mb-5">
                     <div class="w-8 h-8 bg-brand rounded-full flex items-center justify-center border border-white/10">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" class="text-white">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-white">
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                         </svg>
                     </div>
-                    <span class="font-display font-bold text-lg tracking-tight text-white">Labor<span
-                            class="text-indigo-400">Mandi</span></span>
+                    <span class="font-display font-bold text-lg tracking-tight text-white">Labor<span class="text-indigo-400">Mandi</span></span>
                 </a>
                 <p class="text-xs text-slate-500 mb-5 leading-relaxed pr-4">
                     Revolutionizing workforce management for daily wage workers through cutting-edge technology.
@@ -991,32 +648,25 @@
             <div>
                 <h4 class="text-white font-bold mb-4 text-sm">Contact</h4>
                 <ul class="space-y-2 text-xs text-slate-400">
-                    <li><a href="mailto:info@labormandi.com" class="hover:text-white transition">info@labormandi.com</a>
-                    </li>
+                    <li><a href="mailto:info@labormandi.com" class="hover:text-white transition">info@labormandi.com</a></li>
                     <li><a href="tel: +91-7715994007" class="hover:text-white transition"> +91-7715994007</a></li>
                     <li>Mumbai, India</li>
                 </ul>
             </div>
         </div>
 
-        <div
-            class="max-w-7xl mx-auto px-6 border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="max-w-7xl mx-auto px-6 border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <span class="text-xs text-slate-600">&copy; 2026 Labor Mandi. All rights reserved.</span>
             <div class="flex gap-5">
-                <a href="#" class="text-slate-600 hover:text-white transition"><svg width="16" height="16"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path
-                            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
-                        </path>
+                <a href="#" class="text-slate-600 hover:text-white transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
                     </svg></a>
-                <a href="#" class="text-slate-600 hover:text-white transition"><svg width="16" height="16"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <a href="#" class="text-slate-600 hover:text-white transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                         <rect x="2" y="9" width="4" height="12"></rect>
                         <circle cx="4" cy="4" r="2"></circle>
                     </svg></a>
-                <a href="#" class="text-slate-600 hover:text-white transition"><svg width="16" height="16"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <a href="#" class="text-slate-600 hover:text-white transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
@@ -1026,90 +676,5 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    const contactURL = 'https://script.google.com/macros/s/AKfycbyyYKvcnOiDhRAuoAotY4yDaV32COBxezAmaMSDGiMopwU7DhzeWSr-tFvY51WYLM--0A/exec' 
-    const cForm = document.getElementById('contactForm')
-    const cBtn = document.getElementById('contactSubmitBtn')
-    const cMsg = document.getElementById('contactMsg')
-
-    cForm.addEventListener('submit', e => {
-        e.preventDefault()
-        cBtn.disabled = true
-        
-        const originalBtnHTML = cBtn.innerHTML;
-        cBtn.innerHTML = 'Authenticating...'
-        
-        grecaptcha.ready(function() {
-            grecaptcha.execute('6Lf04oMsAAAAAPBL4zNig6q8govf9nEmj9ltBIVh', {action: 'submit'}).then(function(token) {
-                
-                document.getElementById('recaptchaToken').value = token;
-                
-                cBtn.innerHTML = 'Dispatching...'
-                
-                fetch(contactURL, { method: 'POST', body: new FormData(cForm)})
-                    .then(response => {
-                        cMsg.classList.remove('hidden')
-                        cForm.reset()
-                        cBtn.disabled = false
-                        cBtn.innerHTML = originalBtnHTML 
-                        setTimeout(() => cMsg.classList.add('hidden'), 5000)
-                    })
-                    .catch(error => {
-                        cBtn.disabled = false
-                        cBtn.innerHTML = 'Error! Try Again'
-                        console.error('Error!', error.message)
-                    })
-            });
-        });
-    })
-</script>
-    <script>
-        // AOS Animation Init
-        AOS.init({
-            once: true,
-            offset: 20,
-            duration: 800,
-            easing: 'ease-out-cubic',
-        });
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('bg-white/10', 'border-white/20');
-                nav.classList.remove('border-transparent');
-            } else {
-                nav.classList.remove('bg-white/10', 'border-white/20');
-                nav.classList.add('border-transparent');
-            }
-        });
-
-        // iOS Mockup Carousel
-        document.addEventListener('DOMContentLoaded', () => {
-            const carousel = document.getElementById('mockup-carousel');
-            const dots = document.querySelectorAll('.carousel-dot');
-            let currentIndex = 0;
-            const totalSlides = 3;
-
-            setInterval(() => {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-                dots.forEach((dot, index) => {
-                    if (index === currentIndex) {
-                        dot.classList.remove('bg-white/40', 'w-1.5');
-                        dot.classList.add('bg-white', 'w-5');
-                    } else {
-                        dot.classList.remove('bg-white', 'w-5');
-                        dot.classList.add('bg-white/40', 'w-1.5');
-                    }
-                });
-            }, 3000);
-        });
-    </script>
 </body>
-
 </html>
-
-
-
